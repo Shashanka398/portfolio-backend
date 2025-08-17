@@ -1,0 +1,1 @@
+export { handleChatQuery } from './chat.controller';
