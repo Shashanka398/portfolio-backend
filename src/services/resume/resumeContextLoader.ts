@@ -1,5 +1,5 @@
 import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
-import { RESUME_URL } from "../utils/constants/resume.constants";
+import { RESUME_URL } from "../../utils/constants/resume.constants";
 export const resumeContextLoader = async () => {
   try {
     const response = await fetch(RESUME_URL);

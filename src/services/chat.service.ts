@@ -2,6 +2,7 @@ import { Pinecone } from "@pinecone-database/pinecone";
 import { embeddings, initializeAI } from "../utils/services/ai.service";
 import { CHAT_PROMPTS } from "../utils/prompts/chat.prompts";
 import { GEMINI_AI_CONFIG } from "../utils/config/ai.config";
+import { initializePinecone } from "../utils/embedings/ai.utils";
 
 interface ChatResponse {
   answer: any;
@@ -21,16 +22,7 @@ const validateEnvironmentVariables = (): void => {
 };
 
 
-const initializePinecone = (): Pinecone => {
-  return new Pinecone({
-    apiKey: process.env.PINECONE_API_KEY as string,
-  });
-};
 
-
-// const initializeAI = (): GoogleGenerativeAI => {
-//   return new GoogleGenerativeAI(process.env.GEMINI_API_KEY as string);
-// };
 
 
 export const processQuery = async (query: string): Promise<ChatResponse> => {
@@ -59,10 +51,8 @@ export const processQuery = async (query: string): Promise<ChatResponse> => {
       context: [],
     };
   }
-
   const ai = initializeAI();
-     const prompt = CHAT_PROMPTS.PERSONAL_RESPONSE(context, query);
-
+  const prompt = CHAT_PROMPTS.PERSONAL_RESPONSE(context, query);
   const model = ai.getGenerativeModel(GEMINI_AI_CONFIG);
   const response = await model.generateContent(prompt);
   if (!response) {

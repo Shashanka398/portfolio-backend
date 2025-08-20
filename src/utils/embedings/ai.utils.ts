@@ -1,5 +1,6 @@
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 import { HuggingFaceInferenceEmbeddings } from "@langchain/community/embeddings/hf";
+import { Pinecone } from "@pinecone-database/pinecone";
 
 export const embeddings = new HuggingFaceInferenceEmbeddings({
             apiKey: process.env.HUGGINGFACEHUB_API_KEY,
@@ -23,3 +24,10 @@ export const GEMINI_AI_CONFIG ={
       temperature: 0.7,
     },
   };
+
+
+  export const initializePinecone = (): Pinecone => {
+  return new Pinecone({
+    apiKey: process.env.PINECONE_API_KEY as string,
+  });
+};

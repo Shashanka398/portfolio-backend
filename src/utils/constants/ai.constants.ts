@@ -2,7 +2,7 @@ import { HarmCategory, HarmBlockThreshold } from "@google/generative-ai";
 
 export const AI_MODELS = {
     GEMINI: {
-        DEFAULT: "gemini-1.0-pro",
+        DEFAULT: "gemini-2.0-flash-lite",
         FLASH_LITE: "gemini-2.0-flash-lite"
     },
     HUGGING_FACE: {

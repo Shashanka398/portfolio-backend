@@ -11,5 +11,7 @@ export const CHAT_PROMPTS = {
         `System: You are a helpful assistant. Use the provided context to answer questions accurately and concisely.
         Context: ${context}
         Human: ${query}
-        Assistant:`
+        Assistant:`,
+
+    DOCUMENT_SPLITTER_LC_PROMT:"LangChain is a powerful framework for building AI applications. It provides modules for models, prompts, document loaders, and agents, simplifying the development of complex RAG systems"  
 };
