@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "dist/server.js",
  "scripts": {
-  
+
    "build": "tsc && ls dist",
-  "start": "node dist/server.js",
+  "start": "ls dist && node dist/server.js",
   "dev": "ts-node-dev src/server.ts"
   },
   "author": "",
