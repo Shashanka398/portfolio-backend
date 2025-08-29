@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express, { Application } from 'express';
 import cors from 'cors';
-import knowledgeRoutes from './routes/knowlegeRoutes';
+import knowledgeRoutes from '../src/routes/knowlegeRoutes';
 
 const app: Application = express();
 const PORT = process.env.PORT || 5000;

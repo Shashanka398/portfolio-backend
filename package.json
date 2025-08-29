@@ -1,12 +1,11 @@
 {
   "name": "portfolio-backend",
   "version": "1.0.0",
-  "main": "dist/server.js",
+  "main": "api/index.ts",
  "scripts": {
-
-   "build": "tsc && ls dist",
-  "start": "ls dist && node dist/server.js",
-  "dev": "ts-node-dev src/server.ts"
+  "build": "tsc",
+  "start": "node api/index.js",
+  "dev": "ts-node-dev api/index.ts"
   },
   "author": "",
   "license": "ISC",
