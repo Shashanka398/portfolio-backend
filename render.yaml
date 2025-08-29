@@ -2,9 +2,16 @@ services:
   - type: web
     name: portfolio-backend
     env: node
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    buildCommand: |
+      npm install
+      npm run build
+      ls -la dist/  # Debug step to verify dist contents
+    startCommand: node dist/server.js
     nodeVersion: 18.19.0
     envVars:
       - key: NODE_ENV
         value: production
+    disk:
+      name: tmp
+      mountPath: /tmp
+      sizeGB: 1
