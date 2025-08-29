@@ -23,6 +23,6 @@ router.post("/upload-to-vector",uploadToVectorByType)
 
 router.get("/resumeDetails", getResumeContent);
 
-router.get("/chat", handleChatQuery);
+router.post("/chat", handleChatQuery);
 
 export default router;

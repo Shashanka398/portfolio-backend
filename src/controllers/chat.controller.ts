@@ -8,9 +8,9 @@ import { processQuery } from '../services/chat.service';
  */
 export const handleChatQuery = async (req: Request, res: Response): Promise<void> => {
     try {
-        const { query } = req.query;
+        const { message } = req.body;
         
-        if (!query || typeof query !== 'string') {
+        if (!message || typeof message !== 'string') {
             res.status(400).json({
                 success: false,
                 error: 'Invalid query parameter',
@@ -19,7 +19,7 @@ export const handleChatQuery = async (req: Request, res: Response): Promise<void
             return;
         }
 
-        const response = await processQuery(query);
+        const response = await processQuery(message);
         res.json({
             success: true,
             data: response
